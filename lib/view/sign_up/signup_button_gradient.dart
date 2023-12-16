@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:registration/view/sign_up/signup_functions.dart';
 
 import '../../resources/strings_manager.dart';
 
@@ -16,13 +17,14 @@ class SignUpButtonGradient extends StatelessWidget {
             Color.fromRGBO(143, 148, 251, .6),
           ])),
       child: MaterialButton(
-        onPressed: () {},
+        onPressed: () {
+          final signUpFunctions = SignUpFunctions(context: context);
+          signUpFunctions.signUp();
+        },
         child: const Center(
           child: Text(
-           AppStrings.signUp,
-            style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold),
+            AppStrings.signUp,
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
       ),

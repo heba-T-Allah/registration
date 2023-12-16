@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../resources/strings_manager.dart';
+import '../../routing/routes.dart';
 
 class LoginButtonGradient extends StatelessWidget {
   const LoginButtonGradient({super.key});
@@ -16,10 +17,13 @@ class LoginButtonGradient extends StatelessWidget {
             Color.fromRGBO(143, 148, 251, .6),
           ])),
       child: MaterialButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacementNamed(context, Routes.homeScreen);
+
+        },
         child: const Center(
           child: Text(
-           AppStrings.signUp,
+           AppStrings.signIn,
             style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold),

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:registration/view/sign_in/signin_screen.dart';
+import 'package:registration/view/sign_up/signup_button_gradient.dart';
 
 import '../../resources/assets_manager.dart';
 import '../../resources/strings_manager.dart';
-import '../sign_in/form_section_signup.dart';
-import '../sign_in/login_button_gradient.dart';
+import '../../routing/routes.dart';
 import '../sign_in/top_section.dart';
 import 'form_section_signup.dart';
 
@@ -55,17 +54,14 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    const LoginButtonGradient(),
+                    const SignUpButtonGradient(),
                     const SizedBox(
                       height: 4,
                     ),
                     TextButton(
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SignInScreen(),
-                              ));
+                          Navigator.pushReplacementNamed(context, Routes.signInScreen);
+
                         },
                         child: const Text(AppStrings.alreadyRegistered,
                             style: TextStyle(

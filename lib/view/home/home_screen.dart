@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:registration/resources/strings_manager.dart';
+import 'package:registration/resources/text_style.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,10 +8,15 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(AppStrings.homeScreen),
+      ),
       body: Center(
-        child: MaterialButton(onPressed: () {
-
-        },color: Colors.red,child: Text("Log Out"),),
+        child: MaterialButton(
+          onPressed: () {},
+          color: Colors.red,
+          child: Text(AppStrings.logOut,style: TextStyles.textStyleBold18White,),
+        ),
       ),
     );
   }

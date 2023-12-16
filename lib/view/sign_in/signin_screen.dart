@@ -4,7 +4,7 @@ import 'package:registration/view/sign_in/login_button_gradient.dart';
 import 'package:registration/view/sign_in/top_section.dart';
 import '../../resources/assets_manager.dart';
 import '../../resources/strings_manager.dart';
-import '../sign_up/signup_screen.dart';
+import '../../routing/routes.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -57,11 +57,7 @@ class SignInScreen extends StatelessWidget {
                   ),
                   TextButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const SignUpScreen(),
-                            ));
+                        Navigator.pushReplacementNamed(context, Routes.signUpScreen);
                       },
                       child: const Text(AppStrings.notRegistered,
                           style: TextStyle(

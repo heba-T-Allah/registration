@@ -3,9 +3,10 @@ import 'package:registration/resources/strings_manager.dart';
 
 import '../../resources/text_style.dart';
 
-class FormSection extends StatelessWidget {
-  const FormSection({super.key});
-
+class FormSectionSignIn extends StatelessWidget {
+  const FormSectionSignIn({super.key});
+  static final TextEditingController emailControllerSignIn = TextEditingController();
+  static final TextEditingController passwordControllerSignIn = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,6 +21,7 @@ class FormSection extends StatelessWidget {
                           color: Color.fromRGBO(
                               143, 148, 251, 1)))),
               child: TextFormField(
+                controller: emailControllerSignIn,
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintStyle:TextStyles.textStyleRegular18Grey,
@@ -29,6 +31,7 @@ class FormSection extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
+                controller: passwordControllerSignIn,
                 obscureText: true,
                 decoration: InputDecoration(
                   border: InputBorder.none,

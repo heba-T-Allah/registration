@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:registration/view/sign_in/signin_functions.dart';
 
 import '../../resources/strings_manager.dart';
 import '../../routing/routes.dart';
@@ -18,15 +19,13 @@ class LoginButtonGradient extends StatelessWidget {
           ])),
       child: MaterialButton(
         onPressed: () {
-          Navigator.pushReplacementNamed(context, Routes.homeScreen);
-
+          final signInFunctions = SignInFunctions(context: context);
+          signInFunctions.saveUserAndLogin();
         },
         child: const Center(
           child: Text(
-           AppStrings.signIn,
-            style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold),
+            AppStrings.signIn,
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
       ),

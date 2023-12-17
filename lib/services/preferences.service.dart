@@ -23,19 +23,26 @@ abstract class PreferencesService {
   static Future<String?> retrieveStringValue(String key) async {
     _getSharedPreferences();
     String? value = _prefs?.getString(key);
-    print(value);
+    print(await value);
     return value;
   }
+
 //islogged in
-  static saveBoolValue( bool value) async {
+  static saveBoolValue(bool value) async {
     _getSharedPreferences();
     _prefs?.setBool(AppStrings.isLoggedInPref, value);
   }
 
- static Future<bool?> retrieveBoolValue(String key) async {
-   _getSharedPreferences();
-    bool? value = _prefs?.getBool(key);
+  static Future<bool?> retrieveBoolValueIsLoggedIn() async {
+    _getSharedPreferences();
+    bool? value = _prefs?.getBool(AppStrings.isLoggedInPref);
     print(value);
     return value;
+  }
+
+  static void clearSharedPreferences() async {
+    _getSharedPreferences();
+    _prefs?.clear();
+    print("shared preferences cleared");
   }
 }

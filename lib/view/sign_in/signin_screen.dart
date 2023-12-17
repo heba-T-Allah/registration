@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:registration/view/sign_in/form_section_signup.dart';
+import 'package:registration/view/sign_in/form_section_signin.dart';
 import 'package:registration/view/sign_in/login_button_gradient.dart';
 import 'package:registration/view/sign_in/top_section.dart';
 import '../../resources/assets_manager.dart';
@@ -46,7 +46,7 @@ class SignInScreen extends StatelessWidget {
                             offset: Offset(0, 10)),
                       ],
                     ),
-                    child: const FormSection(),
+                    child: const FormSectionSignIn(),
                   ),
                   const SizedBox(
                     height: 20,

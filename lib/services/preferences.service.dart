@@ -2,12 +2,12 @@ import 'package:registration/resources/strings_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class PreferencesService {
-  static SharedPreferences? _prefs;
+  static SharedPreferences? prefs;
 
-  static _getSharedPreferences() async {
+  static getSharedPreferences() async {
     try {
-      _prefs = await SharedPreferences.getInstance();
-      if (_prefs != null) {
+      prefs = await SharedPreferences.getInstance();
+      if (prefs != null) {
         print("preferences init successfully ");
       }
     } catch (e) {
@@ -16,33 +16,33 @@ abstract class PreferencesService {
   }
 
   static saveStringValue(String key, String value) async {
-    _getSharedPreferences();
-    _prefs?.setString(key, value);
+    // _getSharedPreferences();
+    prefs?.setString(key, value);
   }
 
   static Future<String?> retrieveStringValue(String key) async {
-    _getSharedPreferences();
-    String? value = _prefs?.getString(key);
+    // _getSharedPreferences();
+    String? value = prefs?.getString(key);
     print(await value);
     return value;
   }
 
 //islogged in
   static saveBoolValue(bool value) async {
-    _getSharedPreferences();
-    _prefs?.setBool(AppStrings.isLoggedInPref, value);
+    // _getSharedPreferences();
+    prefs?.setBool(AppStrings.isLoggedInPref, value);
   }
 
-  static Future<bool?> retrieveBoolValueIsLoggedIn() async {
-    _getSharedPreferences();
-    bool? value = _prefs?.getBool(AppStrings.isLoggedInPref);
+  static bool retrieveBoolValueIsLoggedIn()  {
+    // _getSharedPreferences();
+    bool value = prefs?.getBool(AppStrings.isLoggedInPref) ?? false;
     print(value);
     return value;
   }
 
   static void clearSharedPreferences() async {
-    _getSharedPreferences();
-    _prefs?.clear();
+    // _getSharedPreferences();
+    prefs?.clear();
     print("shared preferences cleared");
   }
 }
